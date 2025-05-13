@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medium-like Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family:'Times New Roman', Times, serif;
+      
+      color: #222;
+    }
+
+    header {
+      background: white;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    #left {
+        display : flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    header input {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      width: 200px;
+      background-color: rgb(235, 234, 234);
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 2fr 7fr 4fr;
+      
+      padding: 2rem;
+      
+    }
+
+    .nav{
+        display: flex;
+        gap: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #ccc;
+        
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .articles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-bottom: #ccc 1px solid;
+      display: grid;
+      grid-template-columns: 8fr 2fr;
+    }
+
+    .card h2 {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .card p {
+      margin: 0.5rem 0;
+      color: #555;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .sidebar {
+      background: white;
+      padding: 1rem;
+      border-left: 1px solid #ccc;
+      
+    }
+
+    .sidebar h2 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 1rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      background: #eee;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      margin-top: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sidecard{
+      margin-bottom: 1rem;
+    }
+    .sidecard h3{
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div id = "left">
+    <div style="font-size: 2.5rem; font-weight: bold;">Medium</div>
+    <input type="text" placeholder="Search" > 
+    </div>
+    <div class="header-icons">
+      <button>Write</button>
+      <span>🔔</span>
+      <div style="background: #223def; color: #f9f9f9; border-radius: 50%; width: 30px; height: 30px; display:flex; align-items:center; justify-content:center;">A</div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Left Padding Column (or Sidebar if needed) -->
+    <div></div>
+
+    <!-- Main Articles -->
+     <div>
+     <div class = "nav"> 
+     <div> + </div>
+     <div> For You </div>
+     <div> Following </div>
+     <div> Featured </div>
+     </div>
+    <section class="articles">
+      <div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div><div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div><div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div><div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div><div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div><div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div><div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+        <div class="meta">Boris Meinardus • Jan 2</div>
+        <h2>How I’d learn ML in 2025 (if I could start over)</h2>
+        <p>All you need to learn ML in 2025 is a laptop and a list of the steps you must take.</p>
+        <div class="meta">👁 2.1K • 💬 67</div>
+        </div>
+        <div>
+           <img src = "https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D.jpg" alt = "image" style = "width: 80%; height: 80%; border-radius: 10px;"/>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar">
+      <h2>Staff Picks</h2>
+      <div class = "sidecard">
+        <div style="display: flex; align-items: center; gap: 0.9rem;">
+          <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXq2NXcjmsLc69950JhwMhiVN5zDJhKN7V_Q&s.jpg" alt = "image" style = "width: 1.5rem; height: 1.5rem; border-radius: 50%;"/>
+         <div class="meta">Steven C. Hazel</div>
+        </div>
+        <h3>Curiosity is self perpetuating</h3>
+        <div class="meta">2 days ago</div>
+      </div>
+      <div class = "sidecard">
+        <div style="display: flex; align-items: center; gap: 0.9rem;">
+          <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXq2NXcjmsLc69950JhwMhiVN5zDJhKN7V_Q&s.jpg" alt = "image" style = "width: 1.5rem; height: 1.5rem; border-radius: 50%;"/>
+         <div class="meta">Steven C. Hazel</div>
+        </div>
+        <h3>Curiosity is self perpetuating</h3>
+        <div class="meta">2 days ago</div>
+      </div>
+      <div class = "sidecard">
+        <div style="display: flex; align-items: center; gap: 0.9rem;">
+          <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXq2NXcjmsLc69950JhwMhiVN5zDJhKN7V_Q&s.jpg" alt = "image" style = "width: 1.5rem; height: 1.5rem; border-radius: 50%;"/>
+         <div class="meta">Steven C. Hazel</div>
+        </div>
+        <h3>Curiosity is self perpetuating</h3>
+        <div class="meta">2 days ago</div>
+      </div>
+      <div class = "sidecard">
+        <div style="display: flex; align-items: center; gap: 0.9rem;">
+          <img src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXq2NXcjmsLc69950JhwMhiVN5zDJhKN7V_Q&s.jpg" alt = "image" style = "width: 1.5rem; height: 1.5rem; border-radius: 50%;"/>
+         <div class="meta">Steven C. Hazel</div>
+        </div>
+        <h3>Curiosity is self perpetuating</h3>
+        <div class="meta">2 days ago</div>
+      </div>
+      <div class ="meta" style="font-size: 1rem;">See Full List</div>
+
+      <h3 style="margin-top: 2rem;">Recommended topics</h3>
+      <div class="tags">
+        <div class="tag">Programming</div>
+        <div class="tag">Self Improvement</div>
+        <div class="tag">Data Science</div>
+        <div class="tag">Writing</div>
+        <div class="tag">Technology</div>
+        <div class="tag">Lorem</div>
+        <div class="tag">Falana</div>
+        <div class="tag">Dhimkana</div>
+        <div class="tag">Ana De Armas</div>
+        <div class="tag">Bansals</div>
+        <div class="tag">DTU</div>
+        <div class="tag">Coding Blocks</div>
+        <div class="tag">Hmmmm</div>
+        <div class="tag">Burger</div>
+        <div class="tag">Momos</div>
+        <div class="tag">Pizza</div>
+        <div class="tag">Phew</div>
+      </div>
+      <div class ="meta" style="font-size: 1rem; margin-top: 1rem;">See More Topics</div>
+    </aside>
+  </main>
+
+</body>
+</html>
